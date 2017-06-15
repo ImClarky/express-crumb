@@ -1,0 +1,27 @@
+{
+  "name": "express-crumb",
+  "version": "1.0.0",
+  "description": "A breadcrumb generator for Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImClarky/express-crumb.git"
+  },
+  "author": "Sean Clark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ImClarky/express-crumb/issues"
+  },
+  "homepage": "https://github.com/ImClarky/express-crumb#readme",
+  "dependencies": {
+    "express-pathfinder": "^1.0.1",
+    "path-to-regexp": "^1.7.0",
+    "titleize": "^1.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
+}
