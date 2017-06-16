@@ -1,6 +1,6 @@
 {
   "name": "express-crumb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A breadcrumb generator for Express",
   "main": "index.js",
   "scripts": {
