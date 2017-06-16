@@ -30,7 +30,7 @@ app.get("/", function(req, res, next){
 app.use("/foo", foo)
 app.use("/bar", bar)
 
-crumb.getRoutes()
+crumb.getRoutes(app)
 ```
 
 To generate the breadcrumb, you can do the following:
