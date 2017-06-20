@@ -77,7 +77,7 @@ One minor issue that you may find is the generated labels. This module will repl
 ```
 
 ### Options
-There are currently 4 options that can be altered to your liking. These options are passed as an object to the `generateCrumbs()` function. For example:
+There are currently 6 options that can be altered to your liking. These options are passed as an object to the `generateCrumbs()` function. For example:
 
 ```js
 app.use(crumb.generateCrumbs({
@@ -93,6 +93,8 @@ app.use(crumb.generateCrumbs({
 | homeLabel | The label that should be displayed if `includeHome` is enabled <sup>1</sup> | "Home" |
 | includeNonRoutes | Include routes that are present in the path, but do not exist in the application <sup>2</sup> | `false` |
 | linkLastCrumb | Make the last link in the crumb - the page you are on - clickable | `false` |
+| includeSeparators | Include separators - as separate `li` elements - into the markup | `true` |
+| separatorLabel | The label used in the separators <sup>1</sup> | "-" |
 
 1. HTML is supported, meaning html-based icons, like FortAwesome or Glyphicon, can be used.
 
@@ -102,10 +104,24 @@ app.use(crumb.generateCrumbs({
 `generateCrumbs()` will store the breadcrumbs in a `<ul><li>` structure in  `res.locals.crumbs` variable; making it accessible in the template files. Below is the generated markup and some examples of how inject it into your template.
 
 ```html
+<!-- Crumbs with includeSeparators as FALSE -->
 <ul class='crumbs'>
   <li class='crumb'><a href='/'>Home</a></li>
   <li class='crumb'><a href='/tutorials'>Tutorials</a></li>
   <li class='crumb'><a href='/tutorials/javascript'>Javascript</a></li>
+  <li class='crumb'>Create Breadcrumbs For Express</li>
+</ul>
+```
+
+```html
+<!-- Crumbs with includeSeparators as TRUE -->
+<ul class='crumbs'>
+  <li class='crumb'><a href='/'>Home</a></li>
+  <li class='separator'>-</li>
+  <li class='crumb'><a href='/tutorials'>Tutorials</a></li>
+  <li class='separator'>-</li>
+  <li class='crumb'><a href='/tutorials/javascript'>Javascript</a></li>
+  <li class='separator'>-</li>
   <li class='crumb'>Create Breadcrumbs For Express</li>
 </ul>
 ```
@@ -115,7 +131,12 @@ Using Jade/Pug
 !{crumbs}
 ```
 
-using EJS
+Using EJS
 ```ejs
 <%- crumbs %>
+```
+
+Using Handlebars
+```
+{{{crumbs}}}
 ```
