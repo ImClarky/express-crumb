@@ -140,3 +140,10 @@ Using Handlebars
 ```
 {{{crumbs}}}
 ```
+
+
+## Changelog
+- 1.1.0
+  - Added support for separators in the generated markup
+- 1.0.1
+  - Initial Release
