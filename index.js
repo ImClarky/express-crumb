@@ -1,1 +1,1 @@
-module.exports = require('./lib/crumb');
+module.exports = require('./lib/crumb')
